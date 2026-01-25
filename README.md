@@ -1,5 +1,5 @@
 Here you go — this is ready to drop into a `README.md` file:
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18370778.svg)](https://doi.org/10.5281/zenodo.18370778)
 # Agentic Modular UPF Control Pipeline (Evaluation)
 
 This project runs a multi-agent pipeline that translates an operator intent into:
