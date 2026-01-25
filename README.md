@@ -99,7 +99,7 @@ The Monitor agent is evaluated separately and is **not** included in `main.py`.
 * `selector.py` — selects modules + deployment profiles
 * `configurator.py` — creates PFCP-like rules (PDR/FAR/QER/URR)
 * `executor.py` — produces a deployment plan for a cloud orchestrator
-- `monitor.py` — Monitor agent (checks NFR compliance, orchestrator feedback, etc.)
+* `monitor.py` — Monitor agent (checks NFR compliance, orchestrator feedback, etc.)
 * `monitor_evaluation.py` — Monitor agent evaluation (separate from `main.py`)
 * `usage_utils.py` — token usage extraction helpers
 
