@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1142049461.svg)](https://doi.org/10.5281/zenodo.18370777)
+
 # Agentic Modular UPF Control Pipeline (Evaluation)
 
 This project runs a multi-agent pipeline that translates an operator intent into:
