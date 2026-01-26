@@ -7,8 +7,8 @@ This project runs a multi-agent pipeline that translates an operator intent into
 2. PCC rules (Policy Creator),
 3. a selected module chain + profiles (Selector),
 4. PFCP-like rules (Configurator),
-5. a deployment plan (Executor).
-
+5. a deployment plan (Executor),
+6. Checks compliance with the requirements (Monitor).
 The default `main.py` script runs a fixed set of intents for evaluation and prints each agent’s JSON output plus upstream metrics (time + token usage).
 
 ---
