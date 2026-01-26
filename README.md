@@ -68,6 +68,8 @@ Each agent defines its own model inside its Python file:
 * `configurator.py`
 * `executor.py`
 * `monitor.py`
+
+  
 To change a model, edit the line that looks like:
 
 ```python
