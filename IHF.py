@@ -31,6 +31,27 @@ You may ONLY choose from the following actions:
 - Resolve_Ambiguity
 - Validate_Output
 - Produce_Final_JSON
+--------------------------------------------------
+FUNCTIONAL REQUIREMENTS (FR)
+--------------------------------------------------
+functional_requirements (FR) captures WHAT traffic the intent applies to and WHICH hard constraints must be enforced.
+
+It MUST be structured as:
+- flows: a list of flow identifiers describing the traffic
+- constraints: a list of hard, non-QoS constraints
+
+FLOW IDENTIFIERS (flows):
+- Describe the traffic scope (e.g., destination IP, 5-tuple, UE IP, ports, protocols)
+- MUST be expressed as concise strings
+- Each entry may mention direction (uplink/downlink/bidirectional) if specified
+
+CONSTRAINTS (inside FR):
+- Are HARD requirements that restrict behavior
+- Are NOT QoS targets
+- Examples: best-effort requirement, lawful interception, mirroring to a collector
+- MUST be recorded under functional_requirements.constraints
+
+
 
 --------------------------------------------------
 STRICT ROLE LIMITATIONS
@@ -244,7 +265,10 @@ Provide short factual justifications.
 OUTPUT SCHEMA (STRICT)
 --------------------------------------------------
 {{
-  "functional_requirements": "<string>",
+  "functional_requirements": {{
+    "flows": ["<string>"],
+    "constraints": ["<string>"]
+  }},
   "service_category": "<string>",
   "application(s)": ["<string>"],
   "non_functional_requirements": {{
@@ -265,12 +289,10 @@ OUTPUT SCHEMA (STRICT)
       "mfbr_mbps": <number|null>
     }}
   }},
-  "constraints": ["<string>"],
   "assumptions": ["<string>"],
   "rationale": "<string>",
   "confidence": <number>
 }}
-
 
 Return ONLY valid JSON.
 
@@ -313,8 +335,8 @@ def _minimal_validate_ihf(out: Dict[str, Any]) -> None:
         "service_category",
         "application(s)",
         "non_functional_requirements",
-        "constraints",
         "assumptions",
+        "rationale",
         "confidence",
     ]
     for k in required:
