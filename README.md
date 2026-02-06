@@ -1,16 +1,18 @@
 
 # Multi-Agent Modular UPF Control Framework (Evaluation)
 
-This project runs a multi-agent pipeline that translates an operator intent into:
+This framework implements a multi-agent pipeline that translates high-level operator intent into:
 
-1. a functional requirements (FR) and non-functional requirements (NFR) via the Intent Handling Function (IHF), also referred to as the Intent Handler,
+1. functional requirements (FR) and non-functional requirements (NFR) extracted via the Intent Handling Function (IHF), also referred to as the Intent Handler,
 2. PCC rules via the Policy Creator,
 3. a selected module chain + profiles via the Selector,
-4. PFCP-structured rules via the Configurator,
+4. PFCP-inspired data-plane rules (PDR/FAR/QER/URR structures)
 5. a deployment plan via the Executor,
-6. Checks compliance with the requirements via the Monitor.
+6. validates compliance with FR/NFR requirements via the Monitor.
    
 The default `main.py` script runs a fixed set of intents for evaluation and prints each agent’s JSON output plus upstream metrics (time + token usage).
+
+Each agent operates as an independent decision module with structured JSON interfaces, enabling traceability across the intent-to-deployment pipeline.
 
 ---
 
@@ -101,7 +103,7 @@ The Monitor agent is evaluated separately and is **not** included in `main.py`.
 * `policy_creator.py` — builds PCC rules (UL/DL/bidirectional)
 * `selector.py` — selects modules + deployment profiles
 * `configurator.py` — creates PFCP-like rules (PDR/FAR/QER/URR)
-* `executor.py` — produces a deployment plan for an orchestrator
+* `executor.py` — produces a deployment plan for a cloud orchestrator.
 * `monitor.py` — Monitor agent (checks NFR compliance, orchestrator feedback, etc.)
 * `monitor_evaluation.py` — Monitor agent evaluation (separate from `main.py`)
 * `usage_utils.py` — token usage extraction helpers
