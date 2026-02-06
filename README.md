@@ -8,7 +8,7 @@ This framework implements a multi-agent pipeline that translates high-level oper
 3. a selected module chain + profiles via the Selector,
 4. PFCP-inspired data-plane rules (PDR/FAR/QER/URR structures)
 5. a deployment plan via the Executor,
-6. validates compliance with FR/NFR requirements via the Monitor.
+6. an assessment of whether the intent requirements are satisfied via the Monitor.
    
 The default `main.py` script runs a fixed set of intents for evaluation and prints each agent’s JSON output plus upstream metrics (time + token usage).
 
